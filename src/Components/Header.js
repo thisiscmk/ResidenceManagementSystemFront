@@ -26,11 +26,7 @@ const useStyles = makeStyles({
 });
 const defaultNavigationLinks = [
     { title: `home`, path: `/` },
-    { title: `apply`, path: `/apply` },
-    { title: `myProfile`, path: `/myprofile` },
-    { title: `log query`, path: `/logquery` },
-    { title: `house rules`, path: `/houserules` },
-    { title: `MyResidence`, path: `/MyResidence` },
+    { title: `faq`, path: `/faq`},
     { title: `login`, path: `/login`}
 ];
 const studentNavigationLinks = [
@@ -47,14 +43,15 @@ const staffNavigationLinks = [
     { title: `StaffQuery`, path: `/StaffQuery` },
     { title: `logout`, path: `/logout`}
 ];
+
 const Banner = () => {
     const classes = useStyles();
     return (
         <AppBar position="static">
             <Toolbar className={classes.navColour}>
                 <Container className={classes.conatinerSpacing}>
-                    <IconButton className={classes.menuButton} color="inherit" aria-label="menu">
-                        <img src={myResLogo} alt="Web Logo" />
+                    <IconButton className={classes.menuButton} target="_blank" href="https://www.cput.ac.za/" color="inherit" aria-label="menu">
+                        <img src={myResLogo} alt="Web Logo" /> 
                         {/* Put Logo Here AND REMOVE BUTTON ABOVE */}
                     </IconButton>
                 </Container>
@@ -140,4 +137,7 @@ function DisplayHeaders({ loginInfo }) {
     else if (loginInfo.role === "admin") { return <> <Banner /> <StaffNavigation />  </> }
     return <> <Banner /> <DefaultNavigation /> </>
 }
+
+
+
 export default DisplayHeaders
