@@ -21,6 +21,7 @@ function HouseRules() {
                   overflow: 'hidden',
                   flexDirection: 'column',
                   minHeight: 200,
+                  textAlign: "justify",
             },
       }));
 
